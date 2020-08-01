@@ -6,7 +6,9 @@
   "scripts": {
     "build": "ascjs --no-default esm cjs"
   },
-  "keywords": ["Promise"],
+  "keywords": [
+    "Promise"
+  ],
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
@@ -18,5 +20,13 @@
     "import": "./esm/index.js",
     "default": "./cjs/index.js"
   },
-  "unpkg": "es.js"
+  "unpkg": "es.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/lie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/lie/issues"
+  },
+  "homepage": "https://github.com/WebReflection/lie#readme"
 }
