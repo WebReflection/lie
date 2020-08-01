@@ -1,0 +1,22 @@
+{
+  "name": "@webreflection/lie",
+  "version": "0.0.0",
+  "description": "A badly implemented Promise",
+  "main": "./cjs/index.js",
+  "scripts": {
+    "build": "ascjs --no-default esm cjs"
+  },
+  "keywords": ["Promise"],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "ascjs": "^4.0.1"
+  },
+  "module": "./esm/index.js",
+  "type": "module",
+  "exports": {
+    "import": "./esm/index.js",
+    "default": "./cjs/index.js"
+  },
+  "unpkg": "es.js"
+}
