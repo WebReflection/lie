@@ -1,6 +1,6 @@
 {
   "name": "@webreflection/lie",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A badly implemented Promise",
   "main": "./cjs/index.js",
   "scripts": {
