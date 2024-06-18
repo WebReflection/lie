@@ -1,8 +1,5 @@
-# Lie
+import lie from '../esm/index.js';
 
-An optionally sync promise that directly passes along its value, particularly useful for any *API* that handles both synchronous and asynchronous use cases through explicit `.then(...)` invocation.
-
-```js
 lie(123)
   // invoked synchronously
   .then(value => {
@@ -24,4 +21,3 @@ lie(123)
 
 console.log('sync #1 and #2 already logged');
 // async #1 going to be logged after
-```

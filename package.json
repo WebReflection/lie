@@ -1,18 +1,22 @@
 {
   "name": "@webreflection/lie",
   "version": "0.1.1",
-  "description": "A badly implemented Promise",
+  "description": "An optionally sync promise that directly passes along its value",
   "main": "./cjs/index.js",
   "scripts": {
-    "build": "ascjs --no-default esm cjs"
+    "build": "ascjs --no-default esm cjs && npm test",
+    "test": "node test/index.js"
   },
   "keywords": [
-    "Promise"
+    "Promise",
+    "lie",
+    "direct",
+    "sync"
   ],
   "author": "Andrea Giammarchi",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "ascjs": "^4.0.1"
+    "ascjs": "^6.0.3"
   },
   "module": "./esm/index.js",
   "type": "module",
@@ -20,7 +24,6 @@
     "import": "./esm/index.js",
     "default": "./cjs/index.js"
   },
-  "unpkg": "es.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WebReflection/lie.git"
