@@ -1,8 +1,10 @@
-# Lie
+# @webreflection/lie
 
 An optionally sync promise that directly passes along its value, particularly useful for any *API* that handles both synchronous and asynchronous use cases through explicit `.then(...)` invocation.
 
 ```js
+import lie from '@webreflection/lie';
+
 lie(123)
   // invoked synchronously
   .then(value => {
