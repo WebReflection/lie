@@ -1,6 +1,6 @@
 {
   "name": "@webreflection/lie",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "An optionally sync promise that directly passes along its value",
   "main": "./cjs/index.js",
   "scripts": {
