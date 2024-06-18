@@ -20,7 +20,7 @@ class Lie {
   /**
    * @template T
    * @param {(value: V) => T} success
-   * @param {() => never} [_] ignored `failure` callback
+   * @param {() => never} [_]
    * @returns {Thenable<T>}
    */
   then(success, _) {
