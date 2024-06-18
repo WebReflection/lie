@@ -1,40 +1,47 @@
 'use strict';
+/**
+ * @template T
+ * @typedef {T extends PromiseLike ? T : T extends Lie ? T : Lie<T>} Thenable
+ */
+
+/**
+ * @template V
+ * @satisfies {PromiseLike}
+ */
 class Lie {
-  /** @type {unknown} */
+  /** @type {V} */
   #value;
 
-  /**
-   * @param {unknown} value
-   */
+  /** @param {V} value */
   constructor(value) {
     this.#value = value;
   }
 
   /**
-   * Directly invoke the `success` callback with the non-`Promise` value.
-   * @param {(value: unknown) => unknown} success
-   * @param {function} [_] ignored `failure` callback
-   * @returns {Promise<unknown> | Lie<unknown>}
+   * @template T
+   * @param {(value: V) => T} success
+   * @param {() => never} [_] ignored `failure` callback
+   * @returns {Thenable<T>}
    */
   then(success, _) {
     return lie(success(this.#value));
   }
 
-  /**
-   * It ignores the `failure` callback and returns `this` lie.
-   * @param {function} _ ignored `failure` callback
-   * @returns
-   */
+  /** @param {() => never} _ */
   catch(_) {
     return this;
   }
 }
 
 /**
- * Returns the `Promise<unknown>` or a `Lie<unknown>` if the `value` is not a `Promise`.
- * @param {Promise<unknown> | unknown} value
- * @returns {Promise<unknown> | Lie<unknown>}
+ * Returns the `value:T` itself if "thenable", otherwise returns a `Lie<T>`.
+ * @template T
+ * @param {T} value
+ * @returns {Thenable<T>}
  */
-const lie = value => value instanceof Promise ? value : new Lie(value);
+const lie = value =>
+  (value && typeof value === 'object' && 'then' in value) ?
+    value :
+    new Lie(value);
 
 module.exports = lie;
