@@ -31,7 +31,7 @@ class Lie {
 }
 
 /**
- * 
+ * Returns the `Promise<unknown>` or a `Lie<unknown>` if the `value` is not a `Promise`.
  * @param {Promise<unknown> | unknown} value
  * @returns {Promise<unknown> | Lie<unknown>}
  */
